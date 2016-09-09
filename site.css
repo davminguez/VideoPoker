@@ -1,6 +1,11 @@
 body {
-	margin: 20px;
+	margin: 0;
 }
+.header h1 {
+  font-family: 'Monofett', cursive;
+  font-size: 75px;
+}
+
 
 .card {
   display: inline-block;
@@ -16,4 +21,7 @@ box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
 }
 .table {
   font-size: 14px;
+}
+#showResult {
+  font-size: 50px;
 }

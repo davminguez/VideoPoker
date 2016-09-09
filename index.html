@@ -6,15 +6,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="site.css">
+	<link href="https://fonts.googleapis.com/css?family=Monofett" rel="stylesheet">
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
+		<div class="row test">
+			<div class="col-md-12 header text-center">
+				<h1>VIDEO POKER</h1>
+			</div>
+		</div>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-3">
 				<strong>Blanace:</strong> <span id="balance"></span>
 			</div>
-			<div class="col-md-6 text-right">
+			<h1 id="banner" class="col-md-6 text-center">
+				
+			</h1>
+			<div class="col-md-3 text-right">
 				<strong>Bet:</strong> <input type="number" id="bet" />
 			</div>
 		</div>
@@ -31,9 +40,9 @@
 			<br><button id="btnDeal" class="btn btn-primary">Deal</button>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
-				<h4>PayOut Table</h4>
-				<table class="table table-striped">
+			<div class="col-xs-8 col-xs-offset-2">
+				<h4>PayOut</h4>
+				<table class="table table-bordered table-condensed">
 					<thead>
 						<tr>
 							<th>Hand</th>
@@ -41,7 +50,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr class="active">
 							<td>Royal Flush</td>
 							<td>800:1</td>
 						</tr>
@@ -49,7 +58,7 @@
 							<td>Straight Flush</td>
 							<td>50:1</td>
 						</tr>
-						<tr>
+						<tr class="active">
 							<td>4 of a Kind</td>
 							<td>40:1</td>
 						</tr>
@@ -57,7 +66,7 @@
 							<td>Full House</td>
 							<td>10:1</td>
 						</tr>
-						<tr>
+						<tr class="active">
 							<td>Flush</td>
 							<td>7:1</td>
 						</tr>
@@ -65,7 +74,7 @@
 							<td>Straight</td>
 							<td>5:1</td>
 						</tr>
-						<tr>
+						<tr class="active">
 							<td>3 of a Kind</td>
 							<td>3:1</td>
 						</tr>
@@ -73,7 +82,7 @@
 							<td>2 Pairs</td>
 							<td>2:1</td>
 						</tr>
-						<tr>
+						<tr class="active">
 							<td>1 Pair Jacks or Better</td>
 							<td>1:1</td>
 						</tr>
