@@ -5,18 +5,22 @@
 	let firstClick = true;
 	let deck = [];
 	let hand = [];
-	
+
 
 	let balance = document.getElementById('balance');
 	let bet = document.getElementById('bet');
 	let deal = document.getElementById('btnDeal');
 	let banner = document.getElementById('banner');
+	let playAgain = document.getElementById('btnPlayAgain');
 
 	let card0 = document.getElementById('card0');
 	let card1 = document.getElementById('card1');
 	let card2 = document.getElementById('card2');
 	let card3 = document.getElementById('card3');
 	let card4 = document.getElementById('card4');
+
+	let playerHand = document.getElementById('playerHand');
+	let cardReset = '<div class="col-md-6 col-md-offset-3 text-center"><a id="saveCard0" href="#"><img id="card0" class="card" src="img/back.png" alt=" "></a><a id="saveCard1" href="#"><img id="card1" class="card" src="img/back.png" alt=" "></a><a id="saveCard2" href="#"><img id="card2" class="card" src="img/back.png" alt=" "></a><a id="saveCard3" href="#"><img id="card3" class="card" src="img/back.png" alt=" "></a><a id="saveCard4" href="#"><img id="card4" class="card" src="img/back.png" alt=" "></a></div>';
 
 	let cardImages = [];
 	cardImages[0] = document.getElementById('card0');
@@ -36,6 +40,7 @@
 	deal.classList.add('disabled');
 	deal.addEventListener('click', dealCards);
 	bet.addEventListener('change', handleBetChange);
+	playAgain.addEventListener('click', dealAgain);
 
 	saveLinks.forEach(function (link) {
 		link.addEventListener('click', keepCard);
@@ -51,6 +56,28 @@
 		else {
 			deal.classList.add('disabled');
 		}
+		
+	}
+	
+
+	}
+	function dealAgain() {
+		//get rid of win/lose banner text
+		showResult('');
+
+		//hids deal again button
+		playAgain.classList.add('hidden');
+
+		//resets player's hand shows back of cards'
+		cardImages.forEach(function (img) {
+			img.src = 'img/back.png';
+		});
+
+		bet.value = 0;
+		firstClick = true;
+
+		console.log(hand);
+
 	}
 
 	function dealCards() {
@@ -82,9 +109,13 @@
 				}
 			}
 			deal.classList.add('disabled');
+
+
 			evalHand(hand);
+
+			playAgain.classList.remove('hidden');
 		}
-		
+		console.log(hand);
 	}
 
 	function keepCard(event) {
@@ -148,12 +179,12 @@
 			showResult('2 pairs, not too shabby');
 			updateBalance(betAmount * 2);
 
-		}else if (isJacksOrBetter(groups)) {
-			showResult('Eh, nice.');
+		} else if (isJacksOrBetter(groups)) {
+			showResult('You got a pair.');
 			updateBalance(betAmount * 1);
 		}
 		else {
-			showResult('Sorry Bud, give it another shot :/')
+			showResult('Sorry, better luck next time.')
 		}
 	}
 
