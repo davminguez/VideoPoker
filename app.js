@@ -6,6 +6,8 @@
 	let deck = [];
 	let hand = null;
 
+	let doh = document.getElementById('doh');
+
 	let hands = [
 		'Jacks or Better',
 		'2 Pair',
@@ -18,9 +20,9 @@
 		'Royal Flush'
 	];
 	let multiplier = [
-		[1, 2, 3, 5, 7, 10, 40, 50, 200],
-		[2, 4, 6, 10, 14, 20, 80, 100, 400],
-		[4, 8, 12, 20, 28, 40, 160, 200, 800]
+		[1, 2, 3, 4, 5, 7, 20, 30, 80],
+		[2, 4, 6, 8, 10, 14, 40, 60, 160],
+		[4, 8, 12, 16, 20, 28, 80, 120, 320]
 	];
 
 	let balance = document.getElementById('balance');
@@ -63,7 +65,7 @@
 	});
 	
 	if(account.balance < 1){
-		account.load(1000);
+		account.load(24);
 	}
 
 	updateBalance(0);
@@ -132,10 +134,10 @@
 			if (handValue > -1) {
 				let tier = 0;
 
-				if (betAmount >= 700) {
+				if (betAmount >= 13) {
 					tier = 2;
 				}
-				else if (betAmount >= 400) {
+				else if (betAmount >= 6) {
 					tier = 1;
 				}
 				let winnings = multiplier[tier][handValue] * betAmount;
@@ -146,6 +148,7 @@
 			}
 			else {
 				showResult('Try Again');
+				doh.play();
 			}
 
 			playAgain.classList.remove('hidden');
