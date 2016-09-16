@@ -4,8 +4,11 @@ function PokerHand(cards) {
 }
 
 PokerHand.prototype.deal = function (card, index) {
-  if (index) {
-		this.cards.splice(index, 1, card);
+  if (index !== undefined && 
+			index !== null && 
+			index > -1 && 
+			index < this.cards.length) {
+				this.cards.splice(index, 1, card);
   }
   else {
 		this.cards.push(card);

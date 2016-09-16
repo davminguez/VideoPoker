@@ -1,9 +1,13 @@
 body {
 	margin: 0;
+  background: url("img/bgsimpsons.jpg");
 }
 .header h1 {
   font-family: 'Monofett', cursive;
   font-size: 75px;
+  color: #FFD90F;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+  letter-spacing: 3px;
 }
 
 
@@ -29,3 +33,21 @@ box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
 /*div {
   border: dashed 1px red;
 }*/
+#banner {
+  font-family: 'Baloo', cursive;
+  color: #FFD90F;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+#title-balance {
+  font-family: 'Baloo', cursive;
+  font-size: 32px;
+}
+#balance {
+  font-family: 'Baloo', cursive;
+  font-size: 28px;
+  text-align: center;
+}
+#bet-text {
+  font-family: 'Baloo', cursive;
+  font-size: 28px;
+}

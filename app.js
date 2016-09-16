@@ -1,13 +1,13 @@
 (function () {
 
 	let betAmount = 0;
-	let accountBalance = 0;
+	let account = new Account();
 	let firstClick = true;
 	let deck = [];
 	let hand = null;
 
 	let hands = [
-		'Jack or Better',
+		'Jacks or Better',
 		'2 Pair',
 		'3 Of A Kind',
 		'Straight',
@@ -61,12 +61,16 @@
 	saveLinks.forEach(function (link) {
 		link.addEventListener('click', keepCard);
 	});
-	updateBalance(1000);
+	
+	if(account.balance < 1){
+		account.load(1000);
+	}
 
+	updateBalance(0);
 	function handleBetChange(event) {
 		betAmount = event.target.valueAsNumber;
 
-		if (betAmount > 0 && betAmount <= accountBalance) {
+		if (betAmount > 0 && betAmount <= account.balance) {
 			deal.classList.remove('disabled');
 		}
 		else {
@@ -90,8 +94,6 @@
 		bet.value = 0;
 		firstClick = true;
 
-		console.log(hand);
-
 	}
 
 	function dealCards() {
@@ -109,7 +111,7 @@
 				let card = deck.shift();
 				dealCard(card, i);
 			}
-			console.log(hand);
+			console.log("1st deal", hand);
 		}
 		else {
 			for (var i = 0; i < 5; i++) {
@@ -122,6 +124,7 @@
 
 				}
 			}
+			console.log("2nd deal", hand);
 			deal.classList.add('disabled');
 
 			let handValue = hand.evaluate();
@@ -135,9 +138,10 @@
 				else if (betAmount >= 400) {
 					tier = 1;
 				}
+				let winnings = multiplier[tier][handValue] * betAmount;
 
-				showResult(hands[handValue]);
-				updateBalance(multiplier[tier][handValue] * betAmount);
+				showResult(hands[handValue] + '<br>You win ' + winnings + ' donuts! <img height="125" src="img/donut.png">');
+				updateBalance(winnings);
 
 			}
 			else {
@@ -170,8 +174,8 @@
 	}
 
 	function updateBalance(amount) {
-		accountBalance += amount;
-		balance.innerHTML = "<strong>" + accountBalance + "</strong>";
+		account.update(amount);
+		balance.innerHTML = "<strong>" + account.balance + "</strong>";
 	}
 
 	function getDeck() {
