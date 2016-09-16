@@ -6,7 +6,7 @@ body {
   font-family: 'Monofett', cursive;
   font-size: 75px;
   color: #FFD90F;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
   letter-spacing: 3px;
 }
 
@@ -17,7 +17,7 @@ body {
   width: 100px;
 }
 .hold {
-  border: 2px solid green;
+  border: 2px solid #FFD90F;
   border-radius: 5px;
   -webkit-box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
