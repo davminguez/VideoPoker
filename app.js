@@ -64,10 +64,13 @@
 	saveLinks.forEach(function (link) {
 		link.addEventListener('click', keepCard);
 	});
-	
-	if(account.balance < 1){
+
+	if (account.balance < 1) {
 		account.load(24);
 	}
+	// if(account.balance === 0) {
+	// 	showResult('Your donuts are all gone, <br>GAME OVER');
+	// }
 
 	updateBalance(0);
 	function handleBetChange(event) {
@@ -109,7 +112,7 @@
 
 			deck = getDeck();
 			hand = new PokerHand();
-		
+
 
 			for (var i = 0; i < 5; i++) {
 				let card = deck.shift();
@@ -149,12 +152,16 @@
 				woohoo.play();
 
 			}
+			else if (account.balance < 1) {
+				showResult("You're out of donuts <br>GAME OVER");
+			}
 			else {
 				showResult('Try Again');
 				doh.play();
 			}
-
+			
 			playAgain.classList.remove('hidden');
+
 		}
 
 	}
