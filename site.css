@@ -32,6 +32,9 @@ box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
   font-size: 50px;
 }
 
+.title-text {
+  padding-top: 10px;
+}
 /*div {
   border: dashed 1px red;
 }*/
@@ -54,6 +57,30 @@ box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.75);
   font-size: 28px;
 }
 
-.fixed  {
-  position: 
+
+h4 {
+  font-family: 'Baloo', cursive;
+  font-size: 20;
+}
+
+.top-row {
+  background: rgba(131,195,63, 0.75);
+}
+
+.table {
+  font-family: 'Baloo', cursive;
+  font-size: 16;
+}
+
+.hand {
+  background: rgba(255,255,255, 0.50);
+}
+.t1 {
+  background: rgba(102,134,199, 0.75);
+}
+.t2 {
+  background: rgba(255,133,12, 0.75);
+}
+.t3 {
+  background: rgba(255,217,15, 0.75);
 }

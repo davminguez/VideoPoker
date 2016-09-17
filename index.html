@@ -12,11 +12,13 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row test">
 			<div class="col-md-12 header text-center">
-				<h1>DONUT POKER</h1>
+				<img class="title-text" width="500" src="img/donutpoker.png" alt="">
+				<!--<h1>DONUT POKER</h1>-->
 				<audio src="doh.wav" id="doh"></audio>
+				<audio src="woohoo.wav" id="woohoo"></audio>
 			</div>
 		</div>
 		<div class="row">
@@ -51,69 +53,69 @@
 		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2 fixed">
 				<h4>PayOut</h4>
-				<table class="table table-bordered table-condensed">
+				<table class="table table-bordered table-condensed table-sm">
 					<thead>
-						<tr>
+						<tr class="top-row">
 							<th>Hand</th>
-							<th>PayOut Tier 1 (1-399)</th>
-							<th>PayOut Tier 2 (400-699)</th>
-							<th>PayOut Tier 3 (700-1000)</th>
+							<th>PayOut Tier 1 (1-5)</th>
+							<th>PayOut Tier 2 (6-12)</th>
+							<th>PayOut Tier 3 (13-24)</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr class="active">
-							<td>Royal Flush</td>
-							<td>200:1</td>
-							<td>400:1</td>
-							<td>800:1</td>
+						<tr>
+							<td class="hand">Royal Flush</td>
+							<td class="t1">200:1</td>
+							<td class="t2">400:1</td>
+							<td class="t3">800:1</td>
 						</tr>
 						<tr>
-							<td>Straight Flush</td>
-							<td>50:1</td>
-							<td>100:1</td>
-							<td>200:1</td>
-						</tr>
-						<tr class="active">
-							<td>4 of a Kind</td>
-							<td>40:1</td>
-							<td>80:1</td>
-							<td>160:1</td>
+							<td class="hand">Straight Flush</td>
+							<td class="t1">50:1</td>
+							<td class="t2">100:1</td>
+							<td class="t3">200:1</td>
 						</tr>
 						<tr>
-							<td>Full House</td>
-							<td>10:1</td>
-							<td>20:1</td>
-							<td>40:1</td>
-						</tr>
-						<tr class="active">
-							<td>Flush</td>
-							<td>7:1</td>
-							<td>14:1</td>
-							<td>28:1</td>
+							<td class="hand">4 of a Kind</td>
+							<td class="t1">40:1</td>
+							<td class="t2">80:1</td>
+							<td class="t3">160:1</td>
 						</tr>
 						<tr>
-							<td>Straight</td>
-							<td>5:1</td>
-							<td>10:1</td>
-							<td>20:1</td>
-						</tr>
-						<tr class="active">
-							<td>3 of a Kind</td>
-							<td>3:1</td>
-							<td>6:1</td>
-							<td>12:1</td>
+							<td class="hand">Full House</td>
+							<td class="t1">10:1</td>
+							<td class="t2">20:1</td>
+							<td class="t3">40:1</td>
 						</tr>
 						<tr>
-							<td>2 Pairs</td>
-							<td>2:1</td>
-							<td>4:1</td>
-							<td>8:1</td>
+							<td class="hand">Flush</td>
+							<td class="t1">7:1</td>
+							<td class="t2">14:1</td>
+							<td class="t3">28:1</td>
 						</tr>
-						<tr class="active">
-							<td>1 Pair Jacks or Better</td>
-							<td>1:1</td>
-							<td>2:1</td>
-							<td>4:1</td>
+						<tr>
+							<td class="hand">Straight</td>
+							<td class="t1">5:1</td>
+							<td class="t2">10:1</td>
+							<td class="t3">20:1</td>
+						</tr>
+						<tr>
+							<td class="hand">3 of a Kind</td>
+							<td class="t1">3:1</td>
+							<td class="t2">6:1</td>
+							<td class="t3">12:1</td>
+						</tr>
+						<tr>
+							<td class="hand">2 Pairs</td>
+							<td class="t1">2:1</td>
+							<td class="t2">4:1</td>
+							<td class="t3">8:1</td>
+						</tr>
+						<tr>
+							<td class="hand">1 Pair Jacks or Better</td>
+							<td class="t1">1:1</td>
+							<td class="t2">2:1</td>
+							<td class="t3">4:1</td>
 						</tr>
 					</tbody>
 				</table>

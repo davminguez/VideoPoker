@@ -7,6 +7,7 @@
 	let hand = null;
 
 	let doh = document.getElementById('doh');
+	let woohoo = document.getElementById('woohoo');
 
 	let hands = [
 		'Jacks or Better',
@@ -108,6 +109,7 @@
 
 			deck = getDeck();
 			hand = new PokerHand();
+		
 
 			for (var i = 0; i < 5; i++) {
 				let card = deck.shift();
@@ -144,6 +146,7 @@
 
 				showResult(hands[handValue] + '<br>You win ' + winnings + ' donuts! <img height="125" src="img/donut.png">');
 				updateBalance(winnings);
+				woohoo.play();
 
 			}
 			else {
