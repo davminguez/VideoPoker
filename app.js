@@ -154,6 +154,7 @@
 			}
 			else if (account.balance < 1) {
 				showResult("You're out of donuts <br>GAME OVER");
+				
 			}
 			else {
 				showResult('Try Again');
