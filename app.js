@@ -39,7 +39,7 @@
 	let card4 = document.getElementById('card4');
 
 	let playerHand = document.getElementById('playerHand');
-	let cardReset = '<div class="col-md-6 col-md-offset-3 text-center"><a id="saveCard0" href="#"><img id="card0" class="card" src="img/back.png" alt=" "></a><a id="saveCard1" href="#"><img id="card1" class="card" src="img/back.png" alt=" "></a><a id="saveCard2" href="#"><img id="card2" class="card" src="img/back.png" alt=" "></a><a id="saveCard3" href="#"><img id="card3" class="card" src="img/back.png" alt=" "></a><a id="saveCard4" href="#"><img id="card4" class="card" src="img/back.png" alt=" "></a></div>';
+	let cardReset = '<div class="col-md-6 col-md-offset-3 text-center"><a id="saveCard0" href="#"><img id="card0" class="card" src="img/back.jpg" alt=" "></a><a id="saveCard1" href="#"><img id="card1" class="card" src="img/back.jpg" alt=" "></a><a id="saveCard2" href="#"><img id="card2" class="card" src="img/back.jpg" alt=" "></a><a id="saveCard3" href="#"><img id="card3" class="card" src="img/back.jpg" alt=" "></a><a id="saveCard4" href="#"><img id="card4" class="card" src="img/back.jpg" alt=" "></a></div>';
 
 	let cardImages = [];
 	cardImages[0] = document.getElementById('card0');
@@ -94,7 +94,7 @@
 
 		//resets player's hand shows back of cards'
 		cardImages.forEach(function (img) {
-			img.src = 'img/back.png';
+			img.src = 'img/back.jpg';
 		});
 
 		bet.value = 0;
@@ -184,7 +184,7 @@
 
 	function dealCard(card, position) {
 		hand.deal(card, position);
-		cardImages[position].src = 'img/' + card + '.png';
+		cardImages[position].src = 'img/' + card + '.jpg';
 	}
 
 	function updateBalance(amount) {
