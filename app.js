@@ -96,7 +96,7 @@
 		cardImages.forEach(function (img) {
 			img.src = 'img/back.jpg';
 		});
-
+		
 		bet.value = 0;
 		firstClick = true;
 
@@ -118,6 +118,7 @@
 				let card = deck.shift();
 				dealCard(card, i);
 			}
+			bet.setAttribute('disabled', 'disabled');
 			console.log("1st deal", hand);
 		}
 		else {
@@ -133,7 +134,8 @@
 			}
 			console.log("2nd deal", hand);
 			deal.classList.add('disabled');
-
+			bet.removeAttribute('disabled');
+			
 			let handValue = hand.evaluate();
 
 			if (handValue > -1) {
